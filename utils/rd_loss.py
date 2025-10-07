@@ -193,8 +193,8 @@ class DiceLoss1(nn.Module):
         dice_score = (2 * intersection.sum(1) + smooth) / (pred_flat.sum(1) + target_flat.sum(1) + smooth)
         dice_loss = 1 - dice_score.sum() / size
 
-        # 应用掩码
-        masked_dice_loss = dice_loss * mask.sum() / (mask.sum() + 1e-8)  # 避免除以零
+       
+        masked_dice_loss = dice_loss * mask.sum() / (mask.sum() + 1e-8)  
 
         return masked_dice_loss
 
