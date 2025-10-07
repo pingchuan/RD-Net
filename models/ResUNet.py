@@ -59,7 +59,7 @@ class encoder(nn.Module):
         self.encoder5 = resnet.layer4
 
     def forward(self, x):
-        # x 224
+       
         e1 = self.encoder1_conv(x)
         e1 = self.encoder1_bn(e1)
         e1 = self.encoder1_relu(e1)
