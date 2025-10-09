@@ -7,6 +7,9 @@ The loss constraints and corresponding innovations mentioned in the paper are al
 The remaining code and implementation details are being organized and will be released soon.
 
 ## Citation
+<div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px;">
+
+</div> 
 <p style="background-color: #fff0f5; padding: 10px; border-left: 4px solid #ff69b4;">
 @inproceedings{li2025boost,
   title={Boost the Inference with Co-training: A Depth-guided Mutual Learning Framework for Semi-supervised Medical Polyp Segmentation},
