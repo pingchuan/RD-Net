@@ -6,7 +6,7 @@ We release the core code for the methods proposed in the paper to facilitate com
 The loss constraints and corresponding innovations mentioned in the paper are also available.
 The remaining code and implementation details are being organized and will be released soon.
 
-# Citation
+## Citation
 
 @inproceedings{li2025boost,
   title={Boost the Inference with Co-training: A Depth-guided Mutual Learning Framework for Semi-supervised Medical Polyp Segmentation},
