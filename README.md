@@ -7,7 +7,7 @@ The loss constraints and corresponding innovations mentioned in the paper are al
 The remaining code and implementation details are being organized and will be released soon.
 
 ## Citation
-
+<p style="background-color: #fff0f5; padding: 10px; border-left: 4px solid #ff69b4;">
 @inproceedings{li2025boost,
   title={Boost the Inference with Co-training: A Depth-guided Mutual Learning Framework for Semi-supervised Medical Polyp Segmentation},
   author={Li, Yuxin and Zhu, Zihao and Zhang, Yuxiang and Chen, Yifan and Yu, Zhibin},
@@ -15,3 +15,4 @@ The remaining code and implementation details are being organized and will be re
   pages={10394--10403},
   year={2025}
 }
+</p>
