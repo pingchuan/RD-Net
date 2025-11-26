@@ -107,7 +107,7 @@ if __name__ == "__main__":
         mask_folder=args.mask_folder,
         transform=transform
     )
-    valid_dataloader = DataLoader(valid_dataset, batch_size=args.batch_size, shuffle=False, num_workers=2)
+    valid_dataloader = DataLoader(valid_dataset, batch_size=args.batch_size, shuffle=False, num_workers=0)
 
     # Run validation
     validate(model, valid_dataloader, device)
