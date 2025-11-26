@@ -5,22 +5,26 @@ This repository is the official implementation of RD-Net.
 The dataset should be organized as follows:
 
 ```
-dataset_root/
+root/
 ├── kvasir_SEG/
 │   ├── Train/
 │   │   ├── images/
-│   │   └── masks/
+│   │   ├── masks/
+│   │   ├── depth/         
+│   │   └── depth_rgb/      
 │   └── Test/
 │       ├── images/
 │       └── masks/
 ├── CVC_ClinicDB/
 │   ├── Train/
 │   │   ├── images/
-│   │   └── masks/
+│   │   ├── masks/
+│   │   ├── depth/         
+│   │   └── depth_rgb/    
 │   └── Test/
 │       ├── images/
 │       └── masks/
-└── ...
+└── ... 
 ```
 
 ## Training
