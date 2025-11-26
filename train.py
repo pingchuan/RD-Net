@@ -22,6 +22,8 @@ def parse_args():
     parser.add_argument('--dataset', type=str, default='kvasir_SEG')
     parser.add_argument('--train_data_dir', type=str, default='kvasir_SEG/Train')
     parser.add_argument('--test_data_dir', type=str, default='kvasir_SEG/Test')
+    #parse.add_argument('--train_data_dir', type=str, default='CVC-ClinicDB/Train')
+    #parse.add_argument('--test_data_dir', type=str, default='CVC-ClinicDB/Test')
 
     # Training
     parser.add_argument('--checkpoints', type=str, default=r'./checkpoints')
