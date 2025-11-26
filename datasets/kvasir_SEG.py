@@ -13,9 +13,9 @@ def blur(img, p=0.5):
     return img
 
 
-class kvasir_SEG2(Dataset):
+class kvasir_SEG(Dataset):
     def __init__(self, root, data2_dir, mode='train', transform=None, cache=False):
-        super(kvasir_SEG2, self).__init__()
+        super(kvasir_SEG, self).__init__()
         self.data_path = os.path.join(root, data2_dir)
 
         self.id_list = []
@@ -44,7 +44,7 @@ class kvasir_SEG2(Dataset):
         if transform is None:
             if mode == 'train':
                 transform = transforms.Compose([
-                    Resize((512, 512), train=True),
+                    Resize((320, 320), train=True),
                     RandomHorizontalFlip(train=True),
                     RandomVerticalFlip(train=True),
                     RandomRotation(90,train=True),
@@ -52,7 +52,7 @@ class kvasir_SEG2(Dataset):
                 ])
             elif mode == 'valid' or mode == 'test':
                 transform = transforms.Compose([
-                    Resize((512, 512),train=True),
+                    Resize((320, 320),train=True),
                     #ToTensor(),
                 ])
         self.transform = transform

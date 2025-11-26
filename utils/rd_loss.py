@@ -318,4 +318,6 @@ def L2_loss(shallow_features, deep_features, mask=None):
     return loss.mean()
 
 
-
+def mse_consistency_loss(pred_F, pred_G):
+    loss = torch.mean((pred_F - pred_G) ** 2)
+    return loss
