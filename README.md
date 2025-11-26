@@ -2,16 +2,9 @@
 This repository is the official implementation of RD-Net.
 
 ## Training
-
-python train.py \
-  --root ./dataset \
-  --dataset kvasir_SEG \
-  --labeled_perc 10 \
-  --total_iter 40000 \
-  --gpu_id 0
+python train.py
 
 ## Testing
-
 python eval.py
 
 
