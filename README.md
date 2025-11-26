@@ -1,9 +1,25 @@
 # RD-Net
 This repository is the official implementation of RD-Net.
 
-## Training
+## Prepare the dataset 
+dataset_root
+├─ kvasir_SEG
+│  ├── Train
+│  │   ├── images
+│  │   └── masks 
+│  └── Test
+│      ├── images
+│      └── masks
+├─ CVC_ClinicDB
+│  ├── Train
+│  │   ├── images
+│  │   └── masks 
+│  └── Test
+│      ├── images
+│      └── masks
+├─ ...
 
-## *Prepare the dataset* 
+## Training
 python train.py
 
 ## Testing
