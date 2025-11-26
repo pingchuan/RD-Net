@@ -3,7 +3,7 @@ This repository is the official implementation of RD-Net.
 
 ## Prepare the dataset 
 The dataset should be organized as follows:
-
+The depth can be obtained directly using the [Depth Anything model](https://github.com/LiheYoung/Depth-Anything).
 ```
 root/
 ├── kvasir_SEG/
