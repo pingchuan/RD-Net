@@ -24,6 +24,7 @@ dataset_root/
 ```
 
 ## Training
+
 python train.py
 
 ## Testing
