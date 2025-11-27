@@ -12,7 +12,7 @@ def blur(img, p=0.5):
         img = img.filter(ImageFilter.GaussianBlur(radius=sigma))
     return img
 
-
+# kvasir_SEG/ CVC-ClinicDB /kvasir_SEG + CVC-ClinicDB
 class kvasir_SEG(Dataset):
     def __init__(self, root, data2_dir, mode='train', transform=None, cache=False):
         super(kvasir_SEG, self).__init__()
