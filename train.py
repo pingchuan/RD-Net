@@ -35,7 +35,7 @@ def parse_args():
     parser.add_argument('--num_workers', type=int, default=0)
     parser.add_argument('--gpu_id', type=int, default=0)
     parser.add_argument('--model', type=str, default='ResNet34U_f')
-    parser.add_argument('--ckpt_period', type=int, default=50)
+    parser.add_argument('--ckpt_period', type=int, default=1)
     parser.add_argument('--total_iter', type=int, default=40000, help='Total number of training iterations')
 
     # Optimizer
