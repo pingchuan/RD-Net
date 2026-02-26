@@ -37,6 +37,7 @@ def parse_args():
     parser.add_argument('--model', type=str, default='ResNet34U_f')
     parser.add_argument('--ckpt_period', type=int, default=1)
     parser.add_argument('--total_iter', type=int, default=50000, help='Total number of training iterations')
+    parser.add_argument('--nEpoch', type=int, default=300)
 
     # Optimizer
     parser.add_argument('--lr', type=float, default=1e-3)
@@ -100,7 +101,8 @@ def train(args):
     iters_per_epoch = len(train_dataloader)
     if iters_per_epoch == 0:
         raise ValueError("Dataloader is empty!")
-    args.nEpoch = math.ceil(args.total_iter / iters_per_epoch)
+    #args.nEpoch = math.ceil(args.total_iter / iters_per_epoch)
+    args.nEpoch = args.nEpoch * round((100 - args.labeled_perc) / args.labeled_perc)
     #print(f"Total iterations: {args.total_iter} | Iters/epoch: {iters_per_epoch} => nEpoch: {args.nEpoch}")
 
     # Models
@@ -112,11 +114,11 @@ def train(args):
     optimizer = torch.optim.SGD(model.parameters(), lr=args.lr, momentum=args.mt, weight_decay=args.weight_decay)
     optimizer_depth = torch.optim.SGD(model_depth.parameters(), lr=args.lr, momentum=args.mt, weight_decay=args.weight_decay)
 
-    #scheduler = LambdaLR(optimizer, lambda e: 1.0 - pow((e / args.nEpoch), args.power))
-    #scheduler_depth = LambdaLR(optimizer_depth, lambda e: 1.0 - pow((e / args.nEpoch), args.power))
+    scheduler = LambdaLR(optimizer, lambda e: 1.0 - pow((e / args.nEpoch), args.power))
+    scheduler_depth = LambdaLR(optimizer_depth, lambda e: 1.0 - pow((e / args.nEpoch), args.power))
 
-    scheduler = LambdaLR(optimizer, lambda step: 1.0 - pow((step / args.total_iter), args.power))
-    scheduler_depth = LambdaLR(optimizer_depth, lambda step: 1.0 - pow((step / args.total_iter), args.power))
+    #scheduler = LambdaLR(optimizer, lambda step: 1.0 - pow((step / args.total_iter), args.power))
+    #scheduler_depth = LambdaLR(optimizer_depth, lambda step: 1.0 - pow((step / args.total_iter), args.power))
     # Losses
     criterion = BceDiceLoss1().to(device)
     criterion_d = BceDiceLoss1_D().to(device)
