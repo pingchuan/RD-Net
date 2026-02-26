@@ -30,7 +30,7 @@ def parse_args():
     parser.add_argument('--checkpoints', type=str, default=r'./checkpoints')
     parser.add_argument('--shuffle', type=str, default=False)
     parser.add_argument('--method', type=str, default='rd_net')
-    parser.add_argument('--expID', type=int, default=8888)
+    parser.add_argument('--expID', type=int, default=8888) # Kvasir-SEG:8888 CVC-ClinicDB: 10%:1888 2.5% 3888 Kvasir-ClinicDB:8888
     parser.add_argument('--batch_size', type=float, default=4)
     parser.add_argument('--num_workers', type=int, default=0)
     parser.add_argument('--gpu_id', type=int, default=0)
