@@ -101,7 +101,6 @@ def train(args):
     iters_per_epoch = len(train_dataloader)
     if iters_per_epoch == 0:
         raise ValueError("Dataloader is empty!")
-    #args.nEpoch = math.ceil(args.total_iter / iters_per_epoch)
     args.nEpoch = args.nEpoch * round((100 - args.labeled_perc) / args.labeled_perc)
     #print(f"Total iterations: {args.total_iter} | Iters/epoch: {iters_per_epoch} => nEpoch: {args.nEpoch}")
 
