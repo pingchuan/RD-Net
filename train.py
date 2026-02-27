@@ -136,8 +136,8 @@ def train(args):
     print('--- Start Training ---')
 
     for epoch in range(args.nEpoch):
-        if global_iter >= args.total_iter:
-            break
+        #if global_iter >= args.total_iter:
+           # break
 
         model.train()
         model_depth.train()
@@ -145,8 +145,8 @@ def train(args):
         progress_bar = tqdm(enumerate(train_dataloader), total=total_batch)
 
         for batch_idx, data in progress_bar:
-            if global_iter >= args.total_iter:
-                break
+           # if global_iter >= args.total_iter:
+            #    break
 
             # Unpack data
             images, images_s, gts, depths, depth1s = data['image'], data['image_s'], data['label'], data['depth'], data['depth1']
