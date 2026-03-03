@@ -213,8 +213,8 @@ def train(args):
             update_ema_variables(model, ema_model, args.ema_decay, global_iter)
 
             #Step scheduler once per iter
-            scheduler.step()
-            scheduler_depth.step()
+            #scheduler.step()
+            #scheduler_depth.step()
 
             global_iter += 1
 
@@ -226,8 +226,8 @@ def train(args):
             })
 
         # Step scheduler once per epoch
-        #scheduler.step()
-        #scheduler_depth.step()
+        scheduler.step()
+        scheduler_depth.step()
 
         # Save checkpoint
         if (epoch + 1) % args.ckpt_period == 0:
